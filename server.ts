@@ -14,6 +14,7 @@ class ClsJugador {
   ) {}
 }
 
+
 class ClsSala {
   jugadores: ClsJugador[] = [];
   Lv_preguntaActual: ClsPregunta | null = null;
@@ -51,7 +52,7 @@ class ClsServidorTrivia {
     this.Gv_servidor = http.createServer(this.Lv_app);
     this.Gv_io = new Server(this.Gv_servidor, {
       cors: {
-        origin: "http://localhost:5173",
+        origin: "https://front-batalla-trival.vercel.app/",
         methods: ["GET", "POST"],
       },
     });
@@ -60,6 +61,7 @@ class ClsServidorTrivia {
     this.inicializarEventosSocket();
     this.cargarPreguntas();
   }
+  
 
   private inicializarMiddlewares() {
     this.Lv_app.use(cors());

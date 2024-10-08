@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "server.ts",
   "scripts": {
-    "start": "nodemon server.ts",
+    "start": "node dist/server.js",
     "dev": "nodemon server.ts",
-    "build": "tsc && cp src/questions.json dist/"
+    "build": "tsc && cp src/questions.json dist/",
+    "postinstall": "tsc && cp src/questions.json dist/" 
   },
   "author": "",
   "license": "ISC",
